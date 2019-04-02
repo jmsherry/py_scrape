@@ -5,7 +5,6 @@ from lxml import html
 import requests
 from bs4 import BeautifulSoup
 
-
 def scrape(args):
   if (len(args) != 3):
     print(f'''
@@ -23,7 +22,7 @@ def scrape(args):
     r'(?:/?|[/?]\S+)$', re.IGNORECASE)
   print('args[1]', args[1])
   if (not re.match(regex, args[1])):
-    raise('Not a valid URL')
+    raise(f'{args[1]} is not a valid URL')
 
   page = requests.get(args[1])
   soup = BeautifulSoup(page.content, 'html.parser')
