@@ -27,7 +27,7 @@ def scrape(args):
   soup = BeautifulSoup(page.content, 'html.parser')
 
   for el in soup.find_all(args[2]):
-    print(el)
+    print(el, '\n')
 
 if (__name__ == '__main__'):
   scrape(sys.argv)
