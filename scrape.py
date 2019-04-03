@@ -7,10 +7,9 @@ from bs4 import BeautifulSoup
 
 def scrape(args):
   if (len(args) != 3):
-    print(f'''
+    raise(f'''
       Usage: python3 {args[0]} <url> <tagname>
     ''')
-    return
   
   regex = re.compile(
     r'^(?:http|ftp)s?://' # http:// or https://
